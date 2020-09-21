@@ -13,13 +13,14 @@ package ru.job4j.condition;
 //        Если p = 6, а k = 2, то площадь будет равна S = 2.
 //        Если p = 4, а k = 1, то площадь будет равна S = 1.
 public class SqArea {
-    public static double square(int p, int k){
-        double  h = p / (2*(k + 1));
+    public static double square(int p, int k) {
+        double  h = p / (2 * (k + 1));
         double l = h * k;
         double area = h * l;
         return  area;
     }
-    public static void main(String[] args){
+
+    public static void main(String[] args) {
         int p = 6;
         int k = 2;
         double square = SqArea.square(p, k);
