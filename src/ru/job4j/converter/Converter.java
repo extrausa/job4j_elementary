@@ -1,5 +1,6 @@
 package ru.job4j.converter;
 //0. Что такое тестирование [#363002]
+//1. Модульные тесты. [#363003]
 public class Converter {
     public static int rubleToEuro(int ruble) {
         int conversion = ruble / 70;
