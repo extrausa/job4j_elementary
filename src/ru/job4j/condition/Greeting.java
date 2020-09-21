@@ -1,7 +1,8 @@
 package ru.job4j.condition;
 //9.1. String [#362981]
+//9.2. Checkstyle [#362986]
 public class Greeting {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         String idea = "I Like Java!";
         System.out.println(idea);
         idea += " But I am a newbie.";
