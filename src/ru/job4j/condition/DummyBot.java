@@ -18,5 +18,6 @@ public class DummyBot {
         System.out.println(rsl);
         rsl = DummyBot.answer("Привет, бот!");
         System.out.println(rsl);
+
     }
 }
