@@ -12,4 +12,11 @@ public class CounterTest {
         int expected = 30;
         assertThat(rsl, is(expected));
     }
+
+    @Test
+    public void whenSumEvenNumbersFromZerroToSixThenTwelve() {
+        int rsl = Counter.sumByEven(0, 6);
+        int expected = 12;
+        assertThat(rsl, is(expected));
+    }
 }

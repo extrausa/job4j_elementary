@@ -20,10 +20,4 @@ public class Counter {
         return sum;
     }
 
-    public static void main(String[] args) {
-        System.out.println(Counter.summ(3, 9));
-        System.out.println(Counter.summ(10, 12));
-        System.out.println(Counter.summ(0, 5));
-        System.out.println(Counter.sumByEven(0, 4));
-    }
 }
