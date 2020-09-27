@@ -20,5 +20,6 @@ public class Board {
         paint(3, 3);
         System.out.println();
         paint(5, 4);
+
     }
 }
