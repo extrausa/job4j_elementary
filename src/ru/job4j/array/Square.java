@@ -1,5 +1,6 @@
 package ru.job4j.array;
 //6.0.4. Заполнить массив степенями чисел. [#362936]
+//6.0.5. Массивы в тестах. [#362954]
 public class Square {
     public static int[] calculate(int bound) {
         int[] rst = new int[bound];
