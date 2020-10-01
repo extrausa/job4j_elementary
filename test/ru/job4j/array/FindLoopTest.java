@@ -32,4 +32,16 @@ public class FindLoopTest {
         int expect = 4;
         assertThat(result, is(expect));
     }
+
+    @Test
+    public void whenFind3() {
+        int[] input = {5, 6, 7, 2, 9, 0, 3, 5};
+        int value = 9;
+        int start = 2;
+        int finish = 7;
+        int result = FindLoop.indexOf(input, value, start, finish);
+        int expect = 4;
+        assertThat(result, is(expect));
+
+    }
 }
