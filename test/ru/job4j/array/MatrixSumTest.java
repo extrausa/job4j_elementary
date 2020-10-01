@@ -1,5 +1,5 @@
 package ru.job4j.array;
-
+//6.6.2. Двухмерный массив. Циклы. [#362960]
 import org.junit.Test;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.*;
