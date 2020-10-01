@@ -12,9 +12,7 @@ public class Sequence {
         array[2][0] = 6;
         array[2][1] = 3;
         array[2][2] = 6;
-
-
-
         }
-    }
 }
+
+
