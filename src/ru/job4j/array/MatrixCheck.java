@@ -6,16 +6,13 @@ public class MatrixCheck {
         boolean result = true;
         char word = 'X';
         for (int i = 0; i < board.length; i++) {
-            for (int j = 0; j < board[i].length; j++) {
-                if (board[row][j] != word) {
-                    result = false;
-                    break;
-                }
-
-
+            if (board[row][i] != word) {
+                result = false;
+                break;
             }
 
         }
+
         return result;
     }
 
@@ -23,13 +20,9 @@ public class MatrixCheck {
         boolean result = true;
         char word = 'X';
         for (int i = 0; i < board.length; i++) {
-            for (int j = 0; j < board[i].length; j++) {
-                if (board[i][column] != word) {
-                    result = false;
-                    break;
-                }
-
-
+            if (board[i][column] != word) {
+                result = false;
+                break;
             }
 
         }
