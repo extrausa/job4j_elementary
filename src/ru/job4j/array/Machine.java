@@ -14,13 +14,13 @@ public class Machine {
         int chenge = money - price;
 
         for (int i = 0; i < COINS.length; i++) {
-            if (chenge != 0) {
-                while (chenge >= COINS[i]) {
-                    rsl[i] = COINS[i];
-                    chenge -= COINS[i];
-                    size++;
-                }
+
+            while (chenge >= COINS[i]) {
+                  rsl[size] = COINS[i];
+                  chenge -= COINS[i];
+                  size++;
             }
+
 
         }
         return Arrays.copyOf(rsl, size);
