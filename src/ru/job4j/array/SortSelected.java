@@ -9,9 +9,7 @@ public class SortSelected {
             temp = data[i];
             data[i] = data[index];
             data[index] = temp;
-
         }
         return data;
-
     }
 }

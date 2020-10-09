@@ -7,9 +7,7 @@ public class SkipNegative {
                 if (array[i][j] < 0) {
                     array[i][j] = 0;
                 }
-
             }
-
         }
         return array;
     }

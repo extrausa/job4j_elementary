@@ -12,7 +12,6 @@ public class MatrixCheck {
                 result = false;
                 break;
             }
-
         }
 
         return result;
@@ -26,7 +25,6 @@ public class MatrixCheck {
                 result = false;
                 break;
             }
-
         }
         return result;
     }

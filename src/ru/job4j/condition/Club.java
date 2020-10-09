@@ -11,10 +11,8 @@ public class Club {
     }
 
     public static void main(String[] args) {
-
         boolean hasMoney = true;
         boolean beFriend = false;
         Club.permision(hasMoney, beFriend);
-
     }
 }
