@@ -9,7 +9,7 @@ public class Batarey {
 
     public void exchange(Batarey another) {
         this.load = this.load - another.load;
-        another.load = 0;
+        this.load = 0;
 
 
     }
@@ -21,4 +21,5 @@ public class Batarey {
         firstBatarey.exchange(secondBatarey);
         System.out.println("firstBatarey : " + firstBatarey.load + ". second : " + secondBatarey.load);
     }
+
 }
