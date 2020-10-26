@@ -8,19 +8,15 @@ public class Book {
         this.nameBook = nameBook;
         this.countPage = countPage;
     }
-
     public String getNameBook() {
         return nameBook;
     }
-
     public void setNameBook(String nameBook) {
         this.nameBook = nameBook;
     }
-
     public int getCountPage() {
         return countPage;
     }
-
     public void setCountPage(int countPage) {
         this.countPage = countPage;
     }
