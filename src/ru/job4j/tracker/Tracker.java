@@ -1,5 +1,5 @@
 package ru.job4j.tracker;
-
+//6. Метод замены заявки. Tracker.replace [#363155]
 import java.util.Arrays;
 
 public class Tracker {
@@ -14,15 +14,8 @@ public class Tracker {
     }
 
     public Item findById(int id) {
-        Item rsl = null;
-        for (int i = 0; i < size; i++) {
-            Item item = items[i];
-            if(item.getId() == id) {
-                rsl = item;
-                break;
-            }
-        }
-        return rsl;
+        int index = indexOf(id);
+        return index != -1 ? items[index] : null;
     }
 
     public Item[] findAll() {
@@ -51,5 +44,28 @@ public class Tracker {
         }
         resultItems = Arrays.copyOf(resultItems,number);
         return resultItems;
+    }
+
+    private int indexOf(int id) {
+        int rsl = -1;
+        for (int i = 0; i < size; i++) {
+            if (items[i].getId() == id) {
+                rsl = i;
+                break;
+            }
+        }
+        return rsl;
+    }
+
+    public boolean replace(int id, Item item) {
+        int index = indexOf(id);
+        boolean result = false;
+        if (items[index].getId() == id) {
+            items[index] = item;
+            items[index].setId(id);
+            result = true;
+        }
+
+        return result;
     }
 }
