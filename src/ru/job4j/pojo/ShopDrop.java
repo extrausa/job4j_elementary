@@ -3,7 +3,7 @@ package ru.job4j.pojo;
 public class ShopDrop {
     public static Product[] leftShift(Product[] products, int index) {
         //roduct[] rsl = new Product[products.length + 1];
-        for (int i = 0; i < products.length - 1; i++) {
+        for (int i = index; i < products.length - 1; i++) {
 
             if(i == index) {
                 products[i] = null;
