@@ -1,5 +1,6 @@
 package ru.job4j.tracker;
 //6. Метод замены заявки. Tracker.replace [#363155]
+//7. Метод удаления заявки Tracker.delete [#363156]
 import java.util.Arrays;
 
 public class Tracker {
@@ -71,4 +72,18 @@ public class Tracker {
 
         return result;
     }
+
+    public boolean delete(int id) {
+        boolean rsl = false;
+        int index = indexOf(id);
+        if (index > items.length || index < 0){
+            rsl = false;
+        }
+        items[index] = null;
+        System.arraycopy(items, index + 1, items, index, size - index);
+        items[size - 1] = null;
+        size--;
+        return rsl;
+    }
+
 }
