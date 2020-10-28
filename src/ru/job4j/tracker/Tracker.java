@@ -1,6 +1,7 @@
 package ru.job4j.tracker;
 //6. Метод замены заявки. Tracker.replace [#363155]
 //7. Метод удаления заявки Tracker.delete [#363156]
+//8. Что такое валидация? [#363157]
 import java.util.Arrays;
 
 public class Tracker {
@@ -60,10 +61,7 @@ public class Tracker {
 
     public boolean replace(int id, Item item) {
         int index = indexOf(id);
-        boolean result = false;
-        if (index == -1) {
-            result = false;
-        }
+        boolean result = index != -1;
         if (items[index].getId() == id) {
             items[index] = item;
             items[index].setId(id);
@@ -74,15 +72,15 @@ public class Tracker {
     }
 
     public boolean delete(int id) {
-        boolean rsl = false;
         int index = indexOf(id);
-        if (index > items.length || index < 0){
-            rsl = false;
+        boolean rsl = index != -1;
+        if (rsl == true){
+            items[index] = null;
+            System.arraycopy(items, index + 1, items, index, size - index);
+            items[size - 1] = null;
+            size--;
         }
-        items[index] = null;
-        System.arraycopy(items, index + 1, items, index, size - index);
-        items[size - 1] = null;
-        size--;
+
         return rsl;
     }
 
