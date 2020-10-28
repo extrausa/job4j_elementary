@@ -28,8 +28,9 @@ public class Tracker {
                 number++;
             }
         }
-        resultArray = Arrays.copyOf(resultArray, number);
-        return resultArray;
+        return Arrays.copyOf(resultArray, number);
+
+
     };
 
     public Item[] findByName(String key) {
@@ -37,13 +38,12 @@ public class Tracker {
         int number = 0;
         for (int i = 0; i < size; i++) {
             Item item = items[i];
-            if (item.getName() == key) {
+            if (item.getName().equals(key)) {
                 resultItems[number] = item;
                 number++;
             }
         }
-        resultItems = Arrays.copyOf(resultItems,number);
-        return resultItems;
+        return Arrays.copyOf(resultItems,number);
     }
 
     private int indexOf(int id) {
@@ -60,6 +60,9 @@ public class Tracker {
     public boolean replace(int id, Item item) {
         int index = indexOf(id);
         boolean result = false;
+        if (index == -1) {
+            result = false;
+        }
         if (items[index].getId() == id) {
             items[index] = item;
             items[index].setId(id);
