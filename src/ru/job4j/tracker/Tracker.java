@@ -21,16 +21,16 @@ public class Tracker {
     }
 
     public Item[] findAll() {
-        Item[] resultArray = new Item[size];
-        int number = 0;
-        for (int i = 0; i < size; i++) {
-            Item item = items[i];
-            if (item != null) {
-                resultArray[number] = item;
-                number++;
-            }
-        }
-        return Arrays.copyOf(resultArray, number);
+//        Item[] resultArray = new Item[size];
+//        int number = 0;
+//        for (int i = 0; i < size; i++) {
+//            Item item = items[i];
+//            if (item != null) {
+//                resultArray[number] = item;
+//                number++;
+//            }
+//        }
+        return Arrays.copyOf(items, size);
 
 
     };
