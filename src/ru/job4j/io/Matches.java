@@ -27,7 +27,6 @@ public class Matches {
         System.out.println("Берем от 1 до 3 спичек");
         while (startNumber > 0) {
 
-            //movePlaer = Integer.valueOf(inputPlayer.nextLine());
             if (moveStep % 2 == 0)
             {
                 System.out.println("Ход второго игрока");
