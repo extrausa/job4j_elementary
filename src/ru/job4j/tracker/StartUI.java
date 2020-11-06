@@ -11,9 +11,7 @@ public class StartUI {
         boolean run = true;
         while (run) {
             this.showMenu();
-            String msg = "Select";
-            //System.out.println("Select:");
-            int select = Integer.valueOf(input.askStr(msg));
+            int select = Integer.valueOf(input.askStr("Select"));
             if (select < 0 || select > 6) {
                 System.out.println("does not exist");
             }
@@ -23,8 +21,7 @@ public class StartUI {
             }
             if (select == 0) {
                 System.out.println("=== Create a new Item ===");
-                msg = "Enter name: ";
-                String name = input.askStr(msg);
+                String name = input.askStr("Enter name: ");
                 Item item = new Item();
                 item.setName(name);
                 tracker.add(item);
@@ -37,13 +34,9 @@ public class StartUI {
                 }
             } else if (select == 2) {
                 System.out.println("=== Edit item ===");
-                msg = "input id ";
-                String name = input.askStr(msg);
+                String name = input.askStr("input id ");
                 int numb = Integer.valueOf(name);
-
-                msg = "input Name";
-
-                name = input.askStr(msg);;
+                name = input.askStr("input Name");;
                 Item item = new Item();
                 item.setName(name);
                 tracker.replace(numb,item);
@@ -54,8 +47,7 @@ public class StartUI {
                 }
             } else if (select == 3) {
                 System.out.println("=== Delete item ===");
-                msg = "input id ";
-                String name = input.askStr(msg);
+                String name = input.askStr("input id ");
                 int numb = Integer.valueOf(name);
                 tracker.delete(numb);
                 if (tracker.delete(numb)) {
@@ -65,8 +57,7 @@ public class StartUI {
                 }
             } else if (select == 4) {
                 System.out.println("=== Find item by id ===");
-                msg = "input find id ";
-                String name = input.askStr(msg);
+                String name = input.askStr("input find id ");
                 int numb = Integer.valueOf(name);
                 tracker.findById(numb);
                 Item items = tracker.findById(numb);
@@ -77,8 +68,7 @@ public class StartUI {
                 }
             } else if(select == 5) {
                 System.out.println("=== Find item by name ===");
-                msg = "input find name ";
-                String name = input.askStr(msg);
+                String name = input.askStr("input find name ");
                 tracker.findByName(name);
                 Item[] items = tracker.findByName(name);
                 if (items.length > 0) {
