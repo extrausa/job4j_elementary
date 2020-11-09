@@ -8,7 +8,13 @@ import java.util.Scanner;
 //2.1. Реализация класса StartUI [#363091]
 //4.2. Статические методы. [#363086]
 //8. Реализация меню за счет шаблона стратегия. [#363087]
+//9.1 Зависимость от System.out [#363077]
 public class StartUI {
+    private final Output out;
+
+    public StartUI(Output out) {
+        this.out = out;
+    }
 //    public static void createItem(Input input, Tracker tracker) {
 //        System.out.println("=== Create a new Item ===");
 //        String name = input.askStr("Enter name: ");
@@ -136,20 +142,21 @@ public class StartUI {
 //    }
 
     public static void main(String[] args) {
+        Output output = new ConsoleOutput();
         Input input = new ConsoleInput();
         Tracker tracker = new Tracker();
         UserAction[] actions = {
-                new CreateAction(),
-                new ShowAllItems(),
-                new EditItem(),
-                new DeletedItem(),
-                new FindeByNameItem(),
-                new FindeByIdItem(),
+                new CreateAction(output),
+//                new ShowAllItems(),
+//                new EditItem(),
+//                new DeletedItem(),
+//                new FindeByNameItem(),
+//                new FindeByIdItem(),
                 new ExitProgramm()
 
 
         };
-        new StartUI().init(input, tracker, actions);
+        new StartUI(output).init(input, tracker, actions);
         //new StartUI().init(input, tracker);
 
 
