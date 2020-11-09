@@ -20,11 +20,11 @@ public class FindeByNameItem implements UserAction {
         Item[] items = tracker.findByName(name);
         if (items.length > 0) {
             for (int i = 0; i < items.length; i++) {
-                System.out.println(items[i].getName() + " - " + items[i].getId());
+                out.println(items[i].getName() + " - " + items[i].getId());
 
             }
         } else  {
-            System.out.println("items name NOT FOUND");
+            out.println("items name NOT FOUND");
         }
 
         return true;

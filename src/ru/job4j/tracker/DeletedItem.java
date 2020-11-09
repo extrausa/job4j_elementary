@@ -20,9 +20,9 @@ public class DeletedItem implements UserAction{
         int numb = Integer.valueOf(name);
         tracker.delete(numb);
         if (tracker.delete(numb)) {
-            System.out.println("Deleted");
+            out.println("Deleted");
         } else {
-            System.out.println("NOT Deleted");
+            out.println("NOT Deleted");
         }
         return true;
     }

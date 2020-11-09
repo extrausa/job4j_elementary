@@ -22,9 +22,9 @@ public class EditItem implements UserAction {
         item.setName(name);
         tracker.replace(numb,item);
         if (tracker.replace(numb,item)) {
-            System.out.println("re-saved");
+            out.println("re-saved");
         } else {
-            System.out.println("NO re-saved");
+            out.println("NO re-saved");
         }
         return true;
     }
