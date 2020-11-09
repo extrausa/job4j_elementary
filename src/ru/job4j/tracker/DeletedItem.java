@@ -21,10 +21,9 @@ public class DeletedItem implements UserAction{
         tracker.delete(numb);
         if (tracker.delete(numb)) {
             System.out.println("Deleted");
-            return true;
         } else {
             System.out.println("NOT Deleted");
-            return false;
         }
+        return true;
     }
 }

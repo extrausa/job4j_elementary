@@ -21,11 +21,10 @@ public class FindeByIdItem implements UserAction {
         Item items = tracker.findById(numb);
         if (items != null) {
             System.out.println(items.getName() + " - " + items.getId());
-            return true;
         } else  {
             System.out.println("items id NOT FOUND");
-            return false;
         }
+        return true;
 
     }
 }

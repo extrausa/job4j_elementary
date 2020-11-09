@@ -25,7 +25,6 @@ public class FindeByNameItem implements UserAction {
             }
         } else  {
             System.out.println("items name NOT FOUND");
-              return false;
         }
 
         return true;

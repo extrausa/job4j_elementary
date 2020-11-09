@@ -152,7 +152,7 @@ public class StartUI {
                 new DeletedItem(output),
                 new FindeByNameItem(output),
                 new FindeByIdItem(output),
-                new ExitProgramm()
+                new ExitProgramm(output)
 
 
         };
