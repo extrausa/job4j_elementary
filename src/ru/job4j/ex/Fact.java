@@ -9,10 +9,10 @@ public class Fact {
 
     }
 
-    public int calc(int n) {
+    public static int calc(int n) {
         int rsl = 1;
         if (n < 0) {
-            throw new IllegalArgumentException("factorial occurs only for natural numbers and zero");
+            throw new IllegalArgumentException("N could not be less then 0");
         }
         for (int i = 1; i <= n; i++) {
             rsl *= i;
