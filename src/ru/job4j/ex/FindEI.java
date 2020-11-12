@@ -7,11 +7,11 @@ public class FindEI {
         int rsl = -1;
         for (int i = 0; i < value.length; i++) {
             if (value[i].equals(key)) {
-                rsl = 1;
+                rsl = i;
                 break;
             }
         }
-        if (rsl != 1) {
+        if (rsl == -1) {
             throw new ElementNotFoundException("not found");
         }
         return rsl;

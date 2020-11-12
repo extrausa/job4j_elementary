@@ -8,10 +8,11 @@ public class UserStore {
             if (login.equals(users[i].getUserName()) && users[i].getUserName().length() > 3) {
                 name = users[i];
                 break;
-            } else {
-                throw new UserNotFoundException("Not found");
             }
 
+        }
+        if (name == null) {
+            throw new UserNotFoundException("Not found");
         }
 
         return name;
@@ -35,10 +36,9 @@ public class UserStore {
             if (validate(user)) {
                 System.out.println("This user has an access");
             }
-        } catch (Exception e) {
+        } catch (UserInvalidException e) {
             e.printStackTrace();
         }
-
 
 
     }
