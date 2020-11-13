@@ -34,19 +34,19 @@ public class ValidateInputTest {
     public void whenOutputShowAllItems () {
         Output out = new StubOutput();
         Input in = new StubInput(
-                new String[] {"0", "1"}
+                new String[] {"a", "0", "0"}
         );
         Tracker tracker = new Tracker();
         UserAction[] actions = {
-                new ShowAllItems(out),
+                //new ShowAllItems(out),
                 new ExitProgramm(out)
         };
         ValidateInput input = new ValidateInput(out, in);
         int selected = input.askInt("Enter menu:");
         new StartUI(out).init(new ValidateInput(out, in), tracker, actions);
         assertThat(out.toString(), Is.is(
-                "Menu." + System.lineSeparator() + "0. Show" + System.lineSeparator()
-                        + "1. Exit" + System.lineSeparator()));
+                "Please enter validate data again." + System.lineSeparator() + "Menu."
+                        + System.lineSeparator() + "0. Exit" + System.lineSeparator()));
     }
 
 
