@@ -10,6 +10,7 @@ import java.util.Scanner;
 //8. Реализация меню за счет шаблона стратегия. [#363087]
 //9.1 Зависимость от System.out [#363077]
 //1. Обеспечить бесперебойную работу приложения Tracker [#363106]
+
 public class StartUI {
     private final Output out;
 
