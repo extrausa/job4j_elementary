@@ -3,6 +3,7 @@ package ru.job4j.tracker;
 //5.1. Тестирование. Подготовка данных. [#363088]
 //9. Написать тесты на StartUI. [#363092]
 //9.2. Тесты вывода на консоль [#363078]
+//1.1. Тесты на StartUI. [#363104]
 import org.junit.Test;
 
 import static org.hamcrest.Matchers.nullValue;
@@ -139,6 +140,29 @@ public class StartUITest {
                         + "1. Exit" + System.lineSeparator() + "=== Find item by id ===" + System.lineSeparator()
                         + "items id NOT FOUND" + System.lineSeparator() + "Menu." + System.lineSeparator()
                         + "0. Find item by id" + System.lineSeparator() + "1. Exit" + System.lineSeparator()
+        ));
+
+    }
+
+    @Test
+    public void whenInvalidExit() {
+        Output out = new StubOutput();
+        Input in = new StubInput(
+                new String[] {"7", "0" }
+        );
+        Tracker tracker = new Tracker();
+        UserAction[] actions = {
+                new ExitProgramm(out)
+        };
+        new StartUI(out).init(in, tracker, actions);
+        assertThat(out.toString(), is(
+                String.format(
+                        "Menu.%n"
+                                + "0. Exit%n"
+                                + "Wrong input, you can select: 0 .. 0%n"
+                                + "Menu.%n"
+                                + "0. Exit%n"
+                )
         ));
     }
 
