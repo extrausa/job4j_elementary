@@ -3,6 +3,7 @@ package ru.job4j.tracker;
 //Поле id - это уникальный номер заявления.
 //Поле name содержит название заявления.
 public class Item {
+
     private int id;
     private String name;
 

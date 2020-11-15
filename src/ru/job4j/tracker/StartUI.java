@@ -148,6 +148,7 @@ public class StartUI {
 //    }
 
     public static void main(String[] args) {
+        TrackerSingle.getInstance();
         Output output = new ConsoleOutput();
         Input input = new ValidateInput(output, new ConsoleInput());
         Tracker tracker = new Tracker();
