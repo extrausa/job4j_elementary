@@ -1,20 +1,27 @@
 package ru.job4j.tracker;
 //2. Singleton. [#363115]
-public class TrackerSingle {
-    private static TrackerSingle instance;
+public enum TrackerSingle {
+    INSTANCE; /* здесь мы указываем перечисления. */
 
-    private TrackerSingle() {
+
+    Tracker track  = new Tracker();
+
+    public Tracker getTrack() {
+        return track;
     }
 
-    public static TrackerSingle getInstance() {
-        if (instance == null) {
-            instance = new TrackerSingle();
+    public static void main(String[] args) {
+        Tracker tracker = INSTANCE.getTrack();
+        Tracker tracker1 = INSTANCE.getTrack();
+
+        tracker.add(new Item("name1"));
+        tracker1.add(new Item("name2"));
+        Item[] all = tracker.findAll();
+        for (int i = 0; i < all.length; i++) {
+            System.out.println(all[i]);
         }
-        return instance;
-    }
 
-    public Item add(Item model) {
-        return model;
+
+
     }
 }
-
