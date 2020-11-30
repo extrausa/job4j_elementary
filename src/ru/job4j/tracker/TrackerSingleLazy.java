@@ -1,4 +1,7 @@
 package ru.job4j.tracker;
+
+import java.util.List;
+
 //2. Singleton. [#363115]
 public class TrackerSingleLazy {
     private static Tracker instance;
@@ -19,9 +22,9 @@ public class TrackerSingleLazy {
 
         tracker.add(new Item("name3"));
         tracker1.add(new Item("name4"));
-        Item[] all = tracker.findAll();
-        for (int i = 0; i < all.length; i++) {
-            System.out.println(all[i]);
+        List<Item> all = tracker.findAll();
+        for (Item i : all) {
+            System.out.println(i);
         }
     }
 

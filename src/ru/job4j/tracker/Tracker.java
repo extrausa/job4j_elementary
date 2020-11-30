@@ -11,8 +11,8 @@ public class Tracker {
     private final List<Item> items = new ArrayList<>();
     //private TrackerSingle trackerSingle = new TrackerSingle();
 
-    private int ads = 0;
-    private int size = items.size();
+    private int ads = 1;
+    //private int size = items.size();
 
     public Item add(Item item) {
         item.setId(ads++);
@@ -26,13 +26,9 @@ public class Tracker {
         //return index != -1 ? items[index] : null;
     }
 
-    public Item[] findAll() {
-        Item[] resultArray = new Item[items.size()];
-        int cell = 0;
-        for (Item item : items) {
-            resultArray[cell] = item;
-            cell++;
-        }
+    public List<Item> findAll() {
+        return items;
+
 //        int number = 0;
 //        for (int i = 0; i < size; i++) {
 //            Item item = items[i];
@@ -42,24 +38,19 @@ public class Tracker {
 //            }
 //        }
         //return Arrays.copyOf(items, size);
-        return resultArray;
 
 
 
-    };
+    }
 
-    public Item[] findByName(String key) {
-        Item[] resultItems = new Item[items.size()];
-        int cell = 0;
-        for (Item item : items) {
-            if (item.getName().equals(key)) {
-                resultItems[cell] = item;
-                cell++;
+    public List<Item> findByName(String key) {
+        List<Item> result = new ArrayList<>();
+        for (Item i : items) {
+            if (i.getName().equals(key)){
+                result.add(i);
             }
-
         }
-
-        return resultItems;
+        return result;
 //        int number = 0;
 //        for (int i = 0; i < size; i++) {
 //            Item item = items[i];
@@ -72,22 +63,15 @@ public class Tracker {
     }
 
     private int indexOf(int id) {
-//        int rsl = -1;
-//        for (int i = 0; i < size; i++) {
-//            if (items[i].getId() == id) {
-//                rsl = i;
-//                break;
-//            }
-//        }
-//        return rsl;
         int rsl = -1;
-        for (Item numb : items) {
-            if (numb.getId() == id) {
-                rsl = numb.getId();
+        for (int index = 0; index < items.size(); index++) {
+            if (items.get(index).getId() == id) {
+                rsl = index;
                 break;
             }
         }
         return rsl;
+
     }
 
     public boolean replace(int id, Item item) {
@@ -95,6 +79,7 @@ public class Tracker {
         boolean result = index != -1;
         if (index != -1) {
             items.set(index, item);
+            item.setId(id);
 //            items[index] = item;
 //            items[index].setId(id);
             result = true;

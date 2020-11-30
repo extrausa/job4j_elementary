@@ -1,5 +1,7 @@
 package ru.job4j.tracker;
 
+import java.util.List;
+
 public class TrackerSingleEager {
 
     private static final Tracker INSTANCE = new Tracker();
@@ -23,9 +25,9 @@ public class TrackerSingleEager {
 
         tracker.add(new Item("name1"));
         tracker1.add(new Item("name2"));
-        Item[] all = tracker.findAll();
-        for (int i = 0; i < all.length; i++) {
-            System.out.println(all[i]);
+        List<Item> all = tracker.findAll();
+        for (Item i : all) {
+            System.out.println(i);
         }
     }
 }

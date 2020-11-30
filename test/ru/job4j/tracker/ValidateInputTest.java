@@ -3,6 +3,9 @@ package ru.job4j.tracker;
 import org.hamcrest.core.Is;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.*;
 
@@ -37,10 +40,12 @@ public class ValidateInputTest {
                 new String[] {"a", "0", "0"}
         );
         Tracker tracker = new Tracker();
-        UserAction[] actions = {
-                //new ShowAllItems(out),
-                new ExitProgramm(out)
-        };
+        List<UserAction> actions = new ArrayList<>();
+        actions.add(new ExitProgramm(out));
+//        {
+//                //new ShowAllItems(out),
+//                new ExitProgramm(out)
+//        };
         ValidateInput input = new ValidateInput(out, in);
         int selected = input.askInt("Enter menu:");
         new StartUI(out).init(new ValidateInput(out, in), tracker, actions);
