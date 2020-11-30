@@ -4,7 +4,6 @@ package ru.job4j.tracker;
 //9. Написать тесты на StartUI. [#363092]
 //9.2. Тесты вывода на консоль [#363078]
 //1.1. Тесты на StartUI. [#363104]
-//6. Изменить программу Tracker из 2-го модуля [#363063]
 import org.junit.Test;
 
 import java.util.ArrayList;
