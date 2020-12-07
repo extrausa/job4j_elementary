@@ -40,9 +40,7 @@ public class BankService {
                }
            }
        }
-
         return null;
-
     }
 
     public boolean transferMoney(String srcPassport, String srcRequisite,
@@ -57,5 +55,4 @@ public class BankService {
         }
         return rsl;
     }
-
 }
