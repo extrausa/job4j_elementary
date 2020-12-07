@@ -11,15 +11,13 @@ public class BankService {
     }
 
     public void addAccount(String passport, Account account) {
-       User pass = findByPassport(passport);
-       if (pass != null && !users.values().contains(account)) {
-           for (List ac : users.values()) {
-               ac.add(account);
-               users.put(pass, ac);
-           }
+       User user = findByPassport(passport);
+       List<Account> list = users.get(user);
+       if (!list.contains(account)) {
+           list.add(account);
        }
-
     }
+
     public User findByPassport(String passport) {
         for (User user : users.keySet()) {
             if (user.getPassport().equals(passport)) {
