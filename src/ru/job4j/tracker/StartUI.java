@@ -151,9 +151,7 @@ public class StartUI {
         Output output = new ConsoleOutput();
         Input input = new ValidateInput(output, new ConsoleInput());
         Tracker tracker = new Tracker();
-        Comparator comparatorIncrease = new ItemComparatorIncrease();
         List<UserAction> actions = new ArrayList<>();
-
         actions.add(new CreateAction(output));
         actions.add(new ShowAllItems(output));
         actions.add(new EditItem(output));
