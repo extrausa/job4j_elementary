@@ -2,8 +2,10 @@ package ru.job4j.tracker;
 //0. Сортировка [#363056]
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.nullValue;
@@ -37,35 +39,27 @@ public class TrackerTest {
 
     @Test
     public void whenIncrease() {
-        Tracker tracker = new Tracker();
-
-        Item bug = new Item();
-        bug.setName("Bug 1");
-        tracker.add(bug);
-        Item dog = new Item();
-        dog.setName("Dog 2");
-        tracker.add(dog);
-        Item mouse = new Item();
-        mouse.setName("Mouse 3");
-        tracker.add(mouse);
-        Comparator itemIncrease = new ItemComparatorIncrease();
-        Collections.sort(tracker.findAll(), itemIncrease);
-
-        Tracker tracker1 = new Tracker();
-        Item mouse1 = new Item();
-        mouse1.setName("Mouse 3");
-        mouse1.setId(3);
-        tracker1.add(mouse1);
-        Item dog1 = new Item();
-        dog1.setName("Dog 2");
-        dog1.setId(2);
-        tracker1.add(dog1);
-        Item bug1 = new Item();
-        bug1.setName("Bug 1");
-        bug1.setId(1);
-        tracker1.add(bug1);
-
-        assertThat(tracker.findById(1).getName(), is(tracker1.findById(3).getName()));
+        List<Item> items = new ArrayList<>();
+        Item one = new Item();
+        one.setName("Bob");
+        one.setId(1);
+        items.add(one);
+        Item two = new Item();
+        two.setName("Jack");
+        two.setId(2);
+        items.add(two);
+        Comparator name = new ItemComparatorIncrease();
+        Collections.sort(items, name);
+        List<Item> items1 = new ArrayList<>();
+        Item two1 = new Item();
+        two1.setName("Jack");
+        two1.setId(2);
+        items1.add(two1);
+        Item one1 = new Item();
+        one1.setName("Bob");
+        one1.setId(1);
+        items1.add(one1);
+        assertThat(items, is(items1));
     }
 
 
