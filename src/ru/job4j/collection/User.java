@@ -14,12 +14,12 @@ public class User implements Comparable<User> {
 
     @Override
     public int compareTo(User user) {
-        if (this.name.equals(user)) {
-            return this.age - user.age;
+        int rsl = this.name.compareTo(user.name);
+        if (rsl == 0) {
+            return Integer.compare(this.age, user.age);
         } else {
-            return this.name.compareTo(user.name);
+            return rsl;
         }
-
     }
 
     @Override
