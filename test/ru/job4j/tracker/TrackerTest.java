@@ -1,5 +1,5 @@
 package ru.job4j.tracker;
-
+//0. Сортировка [#363056]
 import org.junit.Test;
 
 import java.util.Collections;
@@ -50,10 +50,22 @@ public class TrackerTest {
         tracker.add(mouse);
         Comparator itemIncrease = new ItemComparatorIncrease();
         Collections.sort(tracker.findAll(), itemIncrease);
-        int bugId = bug.getId();
-        int dogId = dog.getId();
-        int mouseId = mouse.getId();
-        assertThat(tracker.findById(mouseId).getName(), is("Mouse 3"));
+
+        Tracker tracker1 = new Tracker();
+        Item mouse1 = new Item();
+        mouse1.setName("Mouse 3");
+        mouse1.setId(3);
+        tracker1.add(mouse1);
+        Item dog1 = new Item();
+        dog1.setName("Dog 2");
+        dog1.setId(2);
+        tracker1.add(dog1);
+        Item bug1 = new Item();
+        bug1.setName("Bug 1");
+        bug1.setId(1);
+        tracker1.add(bug1);
+
+        assertThat(tracker.findById(1).getName(), is(tracker1.findById(3).getName()));
     }
 
 
