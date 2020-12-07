@@ -2,8 +2,9 @@ package ru.job4j.tracker;
 //6. Метод замены заявки. Tracker.replace [#363155]
 //7. Метод удаления заявки Tracker.delete [#363156]
 //8. Что такое валидация? [#363157]
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.*;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Tracker {

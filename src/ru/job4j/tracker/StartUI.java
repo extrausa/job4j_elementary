@@ -2,9 +2,7 @@ package ru.job4j.tracker;
 
 //import java.util.Scanner;
 //4.1. Разрыв зависимости StartUI от Scanner. [#363085]
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 //5. Tracker - хранилище [#363159]
 //2.1. Реализация класса StartUI [#363091]
@@ -153,7 +151,9 @@ public class StartUI {
         Output output = new ConsoleOutput();
         Input input = new ValidateInput(output, new ConsoleInput());
         Tracker tracker = new Tracker();
+        Comparator comparatorIncrease = new ItemComparatorIncrease();
         List<UserAction> actions = new ArrayList<>();
+
         actions.add(new CreateAction(output));
         actions.add(new ShowAllItems(output));
         actions.add(new EditItem(output));
@@ -161,7 +161,6 @@ public class StartUI {
         actions.add(new FindeByNameItem(output));
         actions.add(new FindeByIdItem(output));
         actions.add(new ExitProgramm(output));
-
         //        List<UserAction> actions = {
 //                new CreateAction(output),
 //                new ShowAllItems(output),
