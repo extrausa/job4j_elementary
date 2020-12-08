@@ -15,7 +15,7 @@ public class StringCompare implements Comparator<String> {
             }
 
         }
-        return letter = Integer.compare(left.length(), right.length());
+        return Integer.compare(left.length(), right.length());
 
         }
     }
