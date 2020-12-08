@@ -7,22 +7,17 @@ public class StringCompare implements Comparator<String> {
     @Override
     public int compare(String left, String right) {
         int letter = 0;
-        if (left.length() < right.length()) {
-            return letter = 1;
-        }
-        if (left.length() > right.length()) {
-            return letter = -1;
-        }
-        for (int i = 0; i < left.length(); i++) {
+
+        for (int i = 0; i < Math.min(left.length(), right.length()); i++) {
             letter = Character.compare(left.charAt(i), right.charAt(i));
             if (letter != 0) {
-                letter = 1;
-                break;
+               return letter;
             }
 
         }
-        return letter;
-    }
+        return letter = Integer.compare(left.length(), right.length());
+
+        }
     }
 
 
