@@ -6,24 +6,24 @@ import java.util.HashSet;
 //Для выполнения первого - нужно использовать HashSet
 public class Article {
     public static boolean generateBy(String origin, String line) {
-        boolean result = false;
-        HashSet<String> originH = new HashSet<String>();
-        String[] subStr;
-        String delimeter = "[\\s.,!:]+";
-        subStr = origin.split(delimeter);
-        String[] subStrl;
-        subStrl = line.split(delimeter);
-        for (int i = 0; i < subStr.length; i++) {
-            originH.add(subStr[i]);
+        boolean result = true;
+        HashSet<String> text = new HashSet<String>();
+        String[] newOrign = origin.replaceAll("\\p{Punct}", "").split(" ");
+        String[] lineOrign = line.replaceAll("\\p{Punct}", "").split(" ");
+
+        for (int i = 0; i < newOrign.length; i++) {
+            text.add(newOrign[i]);
         }
-        int count = originH.size();
-        for (int i = 0; i < subStrl.length; i++) {
-            originH.add(subStrl[i]);
+        for (int i = 0; i < lineOrign.length; i++) {
+            if (!text.contains(lineOrign[i])){
+                result = false;
+                break;
+            }
         }
-        int countSecond = originH.size();
-        if (count == countSecond) {
-            result = true;
-        }
+
+
+
         return result;
+
     }
 }
