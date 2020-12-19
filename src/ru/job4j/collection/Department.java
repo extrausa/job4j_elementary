@@ -10,26 +10,20 @@ public class Department {
         for (String value : deps) {
             String start = "";
             for (String el : value.split("/")) {
-                tmp.add(start + "/" + el);
+                if (el.length() == 2) {
+                    start += el;
+                } else  {
+                    start = start + "/" + el;
+                }
+                tmp.add(start);
             }
         }
-        for (String val : tmp) {
-            if (val.length() == 3) {
-                String z = val.substring(1);
-                rsl.add(z);
-            } else {
-                rsl.add(val);
-            }
-        }
-
-
-        return rsl;
+        return new ArrayList<>(tmp);
     }
 
     public static void sortAsc(List<String> orgs) {
-        orgs.sort(Collections.reverseOrder());
-
-
+        Comparator<String> dep = new DepDescComp();
+        orgs.sort(dep);
     }
 
     public static void sortDesc(List<String> orgs) {

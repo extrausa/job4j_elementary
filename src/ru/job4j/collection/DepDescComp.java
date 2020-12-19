@@ -4,7 +4,14 @@ import java.util.Comparator;
 
 public class DepDescComp implements Comparator<String> {
     @Override
-    public int compare(String s, String t1) {
-        return t1.compareTo(s);
+    public int compare(String firstS, String secondS) {
+        String[] first = firstS.split("/");
+        String[] second = secondS.split("/");
+        int rsl = 0;
+        for (int i = 0; i < first.length; i++) {
+            rsl = first[i].compareTo(second[i]);
+        }
+        rsl = rsl == 0 ? rsl = firstS.compareTo(secondS): rsl;
+        return rsl;
     }
 }
