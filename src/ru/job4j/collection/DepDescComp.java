@@ -10,5 +10,6 @@ public class DepDescComp implements Comparator<String> {
         int rsl = second[0].compareTo(first[0]);
         rsl = rsl == 0 ? rsl = firstS.compareTo(secondS): rsl;
         return rsl;
+
     }
 }
