@@ -2,6 +2,7 @@ package ru.job4j.collection;
 
 import java.util.*;
 //2. Отсортировать департаменты [#363048]
+//2.2. Лямбда блок [#362885]
 public class Department {
 
     public static List<String> fillGaps(List<String> deps) {
@@ -22,7 +23,14 @@ public class Department {
     }
 
     public static void sortAsc(List<String> orgs) {
-        Comparator<String> dep = new DepDescComp();
+        //Comparator<String> dep = new DepDescComp();
+        Comparator<String> dep = (firstS, secondS) -> {
+            String[] first = firstS.split("/");
+            String[] second = secondS.split("/");
+            int rsl = second[0].compareTo(first[0]);
+            rsl = rsl == 0 ? rsl = firstS.compareTo(secondS): rsl;
+            return rsl;
+        };
         orgs.sort(dep);
     }
 
