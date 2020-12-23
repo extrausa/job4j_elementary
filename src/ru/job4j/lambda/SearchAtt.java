@@ -21,11 +21,7 @@ public class SearchAtt {
         Predicate<Attachment> first = new Predicate<Attachment>() {
             @Override
             public boolean test(Attachment attachment) {
-                if (attachment.getSize() > 100) {
-                    return true;
-                } else {
-                    return false;
-                }
+                return attachment.getSize() > 100;
             }
         };
         return filter(first, list);
@@ -35,11 +31,7 @@ public class SearchAtt {
         Predicate<Attachment> first = new Predicate<Attachment>() {
             @Override
             public boolean test(Attachment attachment) {
-                if (attachment.getName().contains("bug")) {
-                    return true;
-                } else {
-                    return false;
-                }
+                return attachment.getName().contains("bug");
             }
         };
         return filter(first, list);
