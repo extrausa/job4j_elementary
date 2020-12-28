@@ -1,6 +1,7 @@
 package ru.job4j.lambda.phonebook;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Predicate;
 //6. Функции высшего порядка [#362879]
 public class PhoneDictionary {
@@ -15,7 +16,7 @@ public class PhoneDictionary {
         Predicate<Person> name = person -> person.getName().contains(key);
         Predicate<Person> phone = person -> person.getPhone().contains(key);
         Predicate<Person> address = person -> person.getAddress().contains(key);
-        Predicate<Person> combine =  surname.or(name);
+        Predicate<Person> combine = surname.or(name).or(phone).or(address);
         ArrayList<Person> result = new ArrayList<>();
         for (Person person : persons) {
             if (combine.test(person)) {
