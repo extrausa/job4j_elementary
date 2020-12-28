@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 //0. Stream API [#362892]
-public class streamsAPI {
+public class streamsApi {
 
 
 
