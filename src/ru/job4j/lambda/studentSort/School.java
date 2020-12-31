@@ -1,5 +1,6 @@
 package ru.job4j.lambda.studentSort;
 //1. Фильтрация учеников [#362893]
+//4. Преобразование List в Map. [#362896]
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
