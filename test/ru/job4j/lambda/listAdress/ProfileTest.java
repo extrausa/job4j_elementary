@@ -5,17 +5,27 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.*;
+import static ru.job4j.lambda.listAdress.Profile.collect;
 
 public class ProfileTest {
     @Test
     public void listAdress(){
 
         List<Profile> one = new ArrayList<>();
-        one.add(new Profile(new Adress("Mira", 121,223)));
-        one.add(new Profile(new Adress("Stasova", 11,23)));
-        one.add(new Profile(new Adress("Zapadnaya", 12,22)));
-        one.add(new Profile(new Adress("40 let", 141,32)));
+        one.add(new Profile(new Adress("krd","Mira", 121,223)));
+        one.add(new Profile(new Adress("msc","Stasova", 11,23)));
+        one.add(new Profile(new Adress("perm","Zapadnaya", 12,22)));
+        one.add(new Profile(new Adress("ast","40 let", 141,32)));
+        List<Adress> two = collect(one);
+        List<Adress> eq = new ArrayList<>();
+        eq.add(new Adress("krd","Mira", 121,223));
+        eq.add(new Adress("msc","Stasova", 11,23));
+        eq.add(new Adress("perm","Zapadnaya", 12,22));
+        eq.add(new Adress("ast","40 let", 141,32));
+        eq.sort(new AdressComparator());
+        assertThat(two, is(eq));
 
 
 

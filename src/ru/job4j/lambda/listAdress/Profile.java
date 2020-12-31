@@ -1,11 +1,8 @@
 package ru.job4j.lambda.listAdress;
 
 import ru.job4j.lambda.phonebook.Person;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+//3. Уникальность элементов и сортировка. [#362895]
+import java.util.*;
 import java.util.stream.Collectors;
 //2. Список адресов [#362894]
 public class Profile {
@@ -19,9 +16,11 @@ public class Profile {
         return adress;
     }
 
-    public List<Adress> collect(List<Profile> profiles){
+    public static List<Adress> collect(List<Profile> profiles){
         List<Adress> collect = profiles.stream()
                 .map(Profile::getAdress)
+                .sorted(new AdressComparator())
+                .distinct()
                 .collect(Collectors.toList());
         return collect;
     }
