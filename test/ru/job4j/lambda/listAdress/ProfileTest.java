@@ -3,6 +3,7 @@ package ru.job4j.lambda.listAdress;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 import static org.hamcrest.Matchers.is;
@@ -24,7 +25,7 @@ public class ProfileTest {
         eq.add(new Adress("msc","Stasova", 11,23));
         eq.add(new Adress("perm","Zapadnaya", 12,22));
         eq.add(new Adress("ast","40 let", 141,32));
-        eq.sort(new AdressComparator());
+        eq.sort(Comparator.comparing(Adress::getCity));
         assertThat(two, is(eq));
 
 
