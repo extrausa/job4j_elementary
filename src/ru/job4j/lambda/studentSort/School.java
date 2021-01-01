@@ -15,14 +15,14 @@ public class School {
                 .collect(Collectors.toList());
     }
 
-    public Map<String, Student> mapCollect(List<Student> students, Predicate<Student> predict){
+    public Map<String, Student> mapCollect(List<Student> students){
         return students.stream()
-                .filter(predict)
-                .distinct().collect(
+                .collect(
                         Collectors.toMap(
+
                                 Student::getSurname,
-                                Function.identity()
-                                )
+                                Function.identity(),
+                                (existing, replacement) -> existing)
                 );
     }
 }
