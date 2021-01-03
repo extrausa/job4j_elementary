@@ -11,20 +11,6 @@ public class MatrixListInt {
          return Stream.of(matrix)
                 .flatMap(integers -> Arrays.stream(integers))
                 .collect(Collectors.toList());
-
-
-
     }
-    public static void main(String[] args) {
-        Integer[][] matrx = {
-            {1,2,3},
-            {2,3,4},
-            {3,4,5}
-        };
-
-        List<Integer> con = convert(matrx);
-        con.stream().forEach(integer -> System.out.println(integer));
-    }
-
 
 }
