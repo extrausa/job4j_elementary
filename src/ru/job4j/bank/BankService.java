@@ -1,5 +1,6 @@
 package ru.job4j.bank;
 //3. Банковские переводы [#363068]
+//6. Тестовое задание из модуля коллекции Lite переделать на Stream API. [#362891]
 import java.lang.reflect.Array;
 import java.util.*;
 
@@ -21,24 +22,34 @@ public class BankService {
     }
 
     public User findByPassport(String passport) {
-        for (User user : users.keySet()) {
-            if (user.getPassport().equals(passport)) {
-               return user;
-            }
-
-        }
-        return null;
+//        for (User user : users.keySet()) {
+//            if (user.getPassport().equals(passport)) {
+//               return user;
+//            }
+//
+//        }
+//        return null;
+        return users.keySet()
+                .stream()
+                .filter(user -> user.getPassport().equals(passport))
+                .findFirst()
+                .orElse(null);
     }
 
     public Account findByRequisite(String passport, String requisite) {
         User user = findByPassport(passport);
        if (user != null) {
-            List<Account> ac = users.get(user);
-            for (int i = 0; i < ac.size() ; i++) {
-                 if (ac.get(i).getRequisite().equals(requisite)) {
-                    return ac.get(i);
-                 }
-            }
+//            List<Account> ac = users.get(user);
+//            for (int i = 0; i < ac.size() ; i++) {
+//                 if (ac.get(i).getRequisite().equals(requisite)) {
+//                    return ac.get(i);
+//                 }
+//            }
+           return  users.get(user)
+                   .stream()
+                   .filter(account -> account.getRequisite().equals(requisite))
+                   .findFirst()
+                   .orElse(null);
        }
         return null;
     }
