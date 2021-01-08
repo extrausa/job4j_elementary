@@ -44,8 +44,8 @@ public class DoubleLoop {
 
         Stream.of(Suit.values())
                 .flatMap(suit -> Stream.of(Value.values())
-                .map(value -> value.name() + " - " + suit))
-                .forEach(System.out::println);
+                .map(value -> new Card(suit, value))
+                .forEach(System.out::println));
     }
 
 }
