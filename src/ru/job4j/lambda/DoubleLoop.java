@@ -12,13 +12,21 @@ public class DoubleLoop {
         V_6, V_7, V_8
     }
 
-    public class Card {
+    public static class Card {
         private Suit suit;
         private Value value;
 
         public Card(Suit suit, Value value) {
             this.suit = suit;
             this.value = value;
+        }
+
+        @Override
+        public String toString() {
+            return "Card{" +
+                    "suit=" + suit +
+                    ", value=" + value +
+                    '}';
         }
     }
 
@@ -42,8 +50,8 @@ public class DoubleLoop {
 
         Stream.of(Suit.values())
                 .flatMap(suit -> Stream.of(Value.values())
-                .map(value -> new Card(suit, value))
-                .forEach(System.out::println));
+                .map(value -> new Card(suit, value)))
+                .forEach(System.out::println);
     }
 
 }
