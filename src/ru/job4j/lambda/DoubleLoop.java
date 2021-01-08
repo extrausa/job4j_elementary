@@ -34,7 +34,6 @@ public class DoubleLoop {
 //                 .flatMap(level -> Stream.of(tasks)
 //                 .map(task -> level + " " + task))
 //                .forEach(System.out::println);
-
         for (Suit su : Suit.values()) {
             for (Value va : Value.values()){
                 System.out.println(su + " - " + va);
