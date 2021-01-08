@@ -39,7 +39,6 @@ public class DoubleLoop {
             for (Value va : Value.values()){
                 System.out.println(su + " - " + va);
             }
-            
         }
 
         Stream.of(Suit.values())
