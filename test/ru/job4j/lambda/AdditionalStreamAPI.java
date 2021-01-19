@@ -7,38 +7,39 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class AdditionalStreamAPI {
-    private List<Integer> a = new ArrayList<>();
+    private List<Integer> listInteger = new ArrayList<>();
 
     public static AdditionalStreamAPI of(List<Integer> source) {
         AdditionalStreamAPI check = new AdditionalStreamAPI();
         for (Integer z : source) {
-            check.a.add(z);
+            check.listInteger.add(z);
         }
         return check;
     }
 
     public AdditionalStreamAPI map(Function<Integer, Integer> fun) {
         AdditionalStreamAPI check = new AdditionalStreamAPI();
-        for (Integer z : a) {
-            check.a.add(fun.apply(z));
+        for (Integer z : listInteger) {
+            check.listInteger.add(fun.apply(z));
         }
         return check;
     }
 
     public AdditionalStreamAPI filter(Predicate<Integer> fun) {
         AdditionalStreamAPI check = new AdditionalStreamAPI();
-        for (Integer z : a) {
+//        return check.listInteger.stream()
+//                .filter(integer -> fun.test(integer))
+//                .findFirst();
+        for (Integer z : listInteger) {
             if (fun.test(z)) {
-                check.a.add(z);
-            } else {
-                check.a.remove(z);
+                check.listInteger.add(z);
             }
         }
         return check;
     }
 
     public List<Integer> collect() {
-        return a.stream().collect(Collectors.toList());
+        return listInteger.stream().collect(Collectors.toList());
     }
 
 }

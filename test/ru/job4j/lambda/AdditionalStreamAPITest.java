@@ -54,7 +54,7 @@ public class AdditionalStreamAPITest {
     public void whenMappedFilteredSource() {
         var rsl = AdditionalStreamAPI.of(List.of(1, 2, 3))
                 .map(e -> e * 2)
-                .filter(e -> e == 2)
+                .filter(e -> e == 4)
                 .collect();
         assertThat(rsl, is(List.of(4)));
     }
