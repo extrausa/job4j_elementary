@@ -7,6 +7,14 @@ public class Pupil {
     private String name;
     private List<Subject> subjects;
 
+    @Override
+    public String toString() {
+        return "Pupil{" +
+                "name='" + name + '\'' +
+                ", subjects=" + subjects +
+                '}';
+    }
+
     public Pupil(String name, List<Subject> subjects) {
         this.name = name;
         this.subjects = subjects;
